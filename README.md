@@ -122,7 +122,7 @@ All winners in the first round can accept challenges in the next round where all
 
 **Time**: Within 24hrs of the Twitter announcements of winners accepting challenges.
 
-In this round, participants need to submit their codes to [website link to be added] via GitHub Pull Request.
+In this round, participants need to submit their codes to [ontio/Anniversary](https://github.com/ontio/Anniversary) via GitHub Pull Request.
 The list of developers who ranked in the top 3 in the previous round will be announced at the beginning of this round.
 
 **Rules**:
