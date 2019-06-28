@@ -125,7 +125,7 @@ All winners in the first round can accept challenges in the next round where all
 In this round, participants need to submit their codes to [website link to be added] via GitHub Pull Request.
 The list of developers who ranked in the top 3 in the previous round will be announced at the beginning of this round.
 
-Rules:
+**Rules**:
 
 1. All developers can continue to sign up and submit their solutions, including the first-round winners.
 2. If the optimal results in this round are better than the last round, then the developers will win the entire reward pool, instead of the 60% rewards in the last round.
