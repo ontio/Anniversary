@@ -72,7 +72,7 @@ The Developer Boost Reward Pool is the extra incentives to encourage developer p
 
 Get GitHub-verified ONT ID
 
-1. Download [ONTO](Download link)
+1. Download [ONTO](https://onto.app/) or install from appstore
 2. Click “ONT ID” and sign up
 3. Complete GitHub ID verification.
 
@@ -84,7 +84,7 @@ Submit the following information via [Registration Form](http://bit.ly/2Jf02AE):
 
 #### How to boost?
 After submitting the above information, every time developers use their GitHub account to Fork and Star the Ontology MainNet code, the boost value will be added once, which means 100 ONG will be added to the Developer Boost Reward Pool. The amount of the Reward Pool will be updated every 24 hours, please refer to the [Ontology official Twitter account](https://twitter.com/OntologyNetwork) for the latest amount.
-You can find the [Ontology MainNet code](https://github.com/ontio/ontology)
+You can find the Ontology MainNet code [here](https://github.com/ontio/ontology).
 
 #### How to submit code?
 After completing development and testing, developers must call the registry contract to record their ONT ID and contract hash (SHA-256) on the blockchain. The tutorial is [here](register_tool/README.md).
@@ -99,13 +99,13 @@ After completing the above steps, developers need to submit their contract sourc
 
 1. Code submission time: 10:00 June 30th - 10:00 July 4th (UTC)
 2. Participants who used the fewest instructions to pass all the tests will be the winner (for more details please refer to the challenge rules)
-3. If there is more than one optimal solution, then participants who submitted first will be the winner. The submission time is determined by the time they called the registry contract.
+3. If there is more than one optimal solution, then participants who submitted first will be the winner. The submission time is determined by the time they called the registry contract
 4. If developers submit their codes more than once, we will judge the result based on the codes in the final submission.
 
 #### Winner Announcement
 The winner list will be announced on July 5th (UTC). 
 
-For further details, please refer to Ontology’s official [Facebook] (https://www.facebook.com/ONTnetwork/) or [Twitter](https://twitter.com/OntologyNetwork).
+For further details, please refer to Ontology’s official [Facebook](https://www.facebook.com/ONTnetwork/) or [Twitter](https://twitter.com/OntologyNetwork).
 
 
 #### What are the rewards for winners?
@@ -130,4 +130,4 @@ The list of developers who ranked in the top 3 in the previous round will be ann
 1. All developers can continue to sign up and submit their solutions, including the first-round winners.
 2. If the optimal results in this round are better than the last round, then the developers will win the entire reward pool, instead of the 60% rewards in the last round.
 
-If you have any questions, please ask us on [Ontology Discord] (https://discord.gg/4TQujHj).
+If you have any questions, please ask us on [Ontology Discord](https://discord.gg/4TQujHj).
