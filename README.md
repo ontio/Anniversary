@@ -87,7 +87,8 @@ After submitting the above information, every time developers use their GitHub a
 You can find the [Ontology MainNet code](https://github.com/ontio/ontology)
 
 #### How to submit code?
-After completing development and testing, developers must call the registry contract to record their ONT ID and contract hash (SHA-256) on the blockchain. The tutorial is [here](register_tool/README.md)
+After completing development and testing, developers must call the registry contract to record their ONT ID and contract hash (SHA-256) on the blockchain. The tutorial is [here](register_tool/README.md).
+
 After completing the above steps, developers need to submit their contract source code via [submission form](http://bit.ly/2XuH0Qb). The information you need to submit includes:
 
 * Your ONT ID and email address
