@@ -74,7 +74,6 @@ def match(pattern, text):
 ### 第一轮:解密
 
 奖励：
-
 * 基础奖池 50,000 ONG
 * 开发者助力奖池 (最多50,000 ONG) 
 
@@ -84,13 +83,11 @@ def match(pattern, text):
 #### 如何报名？
 
 获取经GitHub认证的ONT ID
-
 1. 下载[ONTO](https://onto.app/)或者从应用商店中取得并安装；
 2. 进入点击“ONT ID”并注册；
 3. 完成Github身份认证。
 
 请使用表单[Registration Form](http://bit.ly/2Jf02AE)提交以下信息
-
 1. 经GitHub认证的ONT ID；正则表达式常用于程序设计；
 2. GitHub账号；
 3. 联络邮箱。
@@ -103,9 +100,9 @@ def match(pattern, text):
 
 完成以上后，请开发者将合约源码通过 [Submission Form](http://bit.ly/2XuH0Qb)提交。需要提交的信息包括：
 
-* ONT ID及联络邮箱；
-* 存证合约调用的交易Hash；
-* 合约代码。
+* ONT ID及联络邮箱
+* 存证合约调用的交易Hash
+* 合约代码
 
 #### 比赛规则
 
@@ -142,8 +139,7 @@ def match(pattern, text):
 2. 在此轮期间的最优结果如能优于上一轮解密轮结果，提交者将获得总奖池100%的奖励。上一轮获奖者60%奖励将不予发放。
 
 ## 请注意
-
-* 可以从[这里](https://dev-docs.ont.io/#/docs-en/smartcontract/01-started)获取更多本体智能合约开发和测试的相关文档。
-* 请使用Ontology TestNet进行测试，可以从[这里](https://developer.ont.io/applyOng)获取测试网的测试币。
-* 智能合约开发利器[SmartX](https://smartx.ont.io/)，可以在[这里](https://dev-docs.ont.io/#/docs-en/SmartX/00-overview)找到相关教程。
+* 可以从[这里](https://dev-docs.ont.io/#/docs-en/smartcontract/01-started)获取更多本体智能合约开发和测试的相关文档；
+* 请使用Ontology TestNet进行测试，可以从[这里](https://developer.ont.io/applyOng)获取测试网的测试币；
+* 智能合约开发利器[SmartX](https://smartx.ont.io/)，可以在[这里](https://dev-docs.ont.io/#/docs-en/SmartX/00-overview)找到相关教程；
 * 如有问题，请加入[Ontology Discord](https://discord.gg/4TQujHj)。
