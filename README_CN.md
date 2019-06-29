@@ -101,7 +101,7 @@ def match(pattern, text):
 #### 如何提交参赛代码？
 开发者完成开发、测试后，请务必调用存证合约将开发者的ONT ID，合约hash（SHA-256）进行存证。注意：合约调用需支付0.01 ONG。存证教程可以在[这里](register_tool/README.md)找到。
 
-完成以上后，请开发者将合约源码通过 [submission form](http://bit.ly/2XuH0Qb)。需要提交的信息包括：
+完成以上后，请开发者将合约源码通过 [submission form](http://bit.ly/2XuH0Qb)提交。需要提交的信息包括：
 
 * ONT ID及联络邮箱
 * 存证合约调用的交易Hash
