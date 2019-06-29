@@ -127,7 +127,7 @@ For further details, please refer to Ontology’s official [Facebook](https://ww
 ### 제2차   경진
 
 **시간**: Ontology Twitter 공식 계정이 발표한 수상자가 경진 신청을 승인한 뒤 24시간 내.
-이번 참가 코드는 Github Pull Request방식으로 [ontio/Anniversary](https://github.com/ontio/Anniversary)에 제출해 주세요.
+이번 참가 코드는 GitHub Pull Request방식으로 [ontio/Anniversary](https://github.com/ontio/Anniversary)에 제출해 주세요.
 
 이번 경진이 시작 시, 전 경진의 시합 TOP3 참가자 순위를 발표할 것입니다
 
