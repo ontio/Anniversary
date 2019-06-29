@@ -146,5 +146,5 @@ The list of developers who ranked in the top 3 in the previous round will be ann
 ## Please note
 * You can find more documentation of Ontology smart contract development and test [here](https://dev-docs.ont.io/#/docs-en/smartcontract/01-started)
 * Please test your smart contracts using the Ontology TestNet, you can apply for test tokens [here](https://developer.ont.io/applyOng).
-* You can find the tutorial for smart contract development tool [SmartX](https://smartx.ont.io/) [here](https://dev-docs.ont.io/#/docs-en/SmartX/00-overview).
+* You can find the [tutorial](https://dev-docs.ont.io/#/docs-en/SmartX/00-overview) for smart contract development tool [SmartX](https://smartx.ont.io/).
 * If you have any questions, please ask us on [Ontology Discord](https://discord.gg/4TQujHj).
