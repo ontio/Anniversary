@@ -21,11 +21,14 @@ package main
 import (
 	"bufio"
 	"encoding/csv"
+	"encoding/hex"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"math"
 	"os"
 	"runtime"
+	"strings"
 	"time"
 
 	"github.com/ontio/ontology/account"
@@ -43,14 +46,12 @@ import (
 	"github.com/ontio/ontology/smartcontract/event"
 	"github.com/ontio/ontology/smartcontract/storage"
 	"github.com/urfave/cli"
-	"math"
-	"reflect"
 )
 
 const (
-	DEFAULT_BYTECODE = "./test.avm.str"
-	DEFAULT_TESTCASE = "./testcases.txt"
-	DEFAULT_WALLET = "./wallet.dat"
+	DEFAULT_BYTECODE    = "./test.avm.str"
+	DEFAULT_TESTCASE    = "./testcases.txt"
+	DEFAULT_WALLET      = "./wallet.dat"
 	DEFAULT_LEDGER_PATH = "./Chain"
 )
 
@@ -66,11 +67,6 @@ var (
 		Usage: "test cases",
 		Value: DEFAULT_TESTCASE,
 	}
-	//WalletFlag = cli.StringFlag{
-	//	Name:  "wallet,w",
-	//	Usage: "wallet file",
-	//	Value: DEFAULT_WALLET,
-	//}
 	LedgerPathFlag = cli.StringFlag{
 		Name:  "ledger,l",
 		Usage: "ledger path",
@@ -110,9 +106,14 @@ func neovmCLI(ctx *cli.Context) {
 
 	// read nvm bytecode
 	codeFile := ctx.String(utils.GetFlagName(NvmByteCodeFlag))
-	code, err := ioutil.ReadFile(codeFile)
+	codeStr, err := ioutil.ReadFile(codeFile)
 	if err != nil {
 		log.Errorf("open nvm code file failed: %s", err)
+		return
+	}
+	code, err := hex.DecodeString(strings.TrimSpace(string(codeStr)))
+	if err != nil {
+		log.Errorf("failed to decode code from hex to binary: %s", err)
 		return
 	}
 
@@ -141,7 +142,7 @@ func neovmCLI(ctx *cli.Context) {
 		log.Errorf("failed to deploy smart contract: %s", err)
 		return
 	}
-	log.Infof("deploy done, address = %s", contractAddr.ToHexString())
+	log.Infof("deploy %s done, address = %s", codeFile, contractAddr.ToHexString())
 
 	// load testcases
 	testcaseFile := ctx.String(utils.GetFlagName(TestCasesFlag))
@@ -153,6 +154,8 @@ func neovmCLI(ctx *cli.Context) {
 	defer f.Close()
 
 	reader := csv.NewReader(bufio.NewReader(f))
+	gas_sum := uint64(0)
+	case_id := 1
 	for {
 		line, err := reader.Read()
 		if err == io.EOF {
@@ -162,28 +165,36 @@ func neovmCLI(ctx *cli.Context) {
 			return
 		}
 
-		if len(line) != 4 {
+		if len(line) != 3 {
 			log.Errorf("bad testcase: %v", line)
 			continue
 		}
 
-		testcase_id := line[0]
-		result := line[3]
-		//params := []interface{}{line[1], []interface{}{line[2]}}
-		params := []interface{}{"init"}
+		pattern := strings.TrimSpace(line[0])
+		text := strings.TrimSpace(line[1])
+		result := strings.TrimSpace(line[2])
+
+		params := []interface{}{"match", []interface{}{pattern, text}}
+		//params := []interface{}{"init"}
 		mtx, err := common2.NewNeovmInvokeTransaction(0, gaslimit, contractAddr, params)
 		if err != nil {
-			log.Errorf("create tx for testcase %s failed: %s", testcase_id, err)
+			log.Errorf("create tx for testcase %d failed: %s", case_id, err)
 			break
 		}
-		testResult, err := executeInvokeTx(stateStore, overlay, owner, mtx)
+		testResult, gas, err := executeInvokeTx(stateStore, overlay, owner, mtx)
 		if err != nil {
-			log.Errorf("process testcase %s failed: %s", testcase_id, err)
+			log.Errorf("process testcase %d failed: %s", case_id, err)
+			break
 		}
 		if testResult != result {
-			log.Errorf("testcase %s failed: %s vs %s", testcase_id, testResult, result)
+			log.Errorf("testcase %d failed: '%s' vs '%s'", case_id, testResult, result)
+			break
 		}
+		log.Infof("case %d: passed", case_id)
+		gas_sum += gas
+		case_id++
 	}
+	log.Infof("sum gas: %d", gas_sum)
 }
 
 func executeDeployTx(store *ledgerstore.StateStore, overlay *overlaydb.OverlayDB, user *account.Account, mtx *types.MutableTransaction) error {
@@ -201,16 +212,17 @@ func executeDeployTx(store *ledgerstore.StateStore, overlay *overlaydb.OverlayDB
 	if err := store.HandleDeployTransaction(nil, overlay, cache, tx, nil, notify); err != nil {
 		return fmt.Errorf("handle deploy tx: %s", err)
 	}
+	cache.Commit()
 	return nil
 }
 
-func executeInvokeTx(store *ledgerstore.StateStore, overlay *overlaydb.OverlayDB, user *account.Account, mtx *types.MutableTransaction) (string, error) {
+func executeInvokeTx(store *ledgerstore.StateStore, overlay *overlaydb.OverlayDB, user *account.Account, mtx *types.MutableTransaction) (string, uint64, error) {
 	if err := utils.SignTransaction(user, mtx); err != nil {
-		return "", fmt.Errorf("failed to sign tx: %s", err)
+		return "", 0, fmt.Errorf("failed to sign tx: %s", err)
 	}
 	tx, err := mtx.IntoImmutable()
 	if err != nil {
-		return "", fmt.Errorf("failed to invoke tx immu: %s", err)
+		return "", 0, fmt.Errorf("failed to invoke tx immu: %s", err)
 	}
 
 	cache := storage.NewCacheDB(overlay)
@@ -219,9 +231,6 @@ func executeInvokeTx(store *ledgerstore.StateStore, overlay *overlaydb.OverlayDB
 		Height: 1000,
 		Tx:     tx,
 	}
-	if tx.TxType != types.Invoke {
-		return "", fmt.Errorf("preexec Tx is not Invoke")
-	}
 	invoke := tx.Payload.(*payload.InvokeCode)
 
 	sc := smartcontract.SmartContract{
@@ -229,22 +238,24 @@ func executeInvokeTx(store *ledgerstore.StateStore, overlay *overlaydb.OverlayDB
 		Store:   nil,
 		CacheDB: cache,
 		Gas:     math.MaxUint64,
-		PreExec: true,
+		//PreExec: true,
 	}
 
 	//start the smart contract executive function
-	engine, _ := sc.NewExecuteEngine(invoke.Code)
+	engine, err := sc.NewExecuteEngine(invoke.Code)
+	if err != nil {
+		return "", 0, fmt.Errorf("start exec engine failed: %s", err)
+	}
 	result, err := engine.Invoke()
 	if err != nil {
-		return "", fmt.Errorf("preexec invoke failed: %s", err)
+		return "", 0, fmt.Errorf("preexec invoke failed: %s", err)
 	}
-	log.Infof("tx result: %v, %v, gas %v \n", result, reflect.TypeOf(result), math.MaxUint64 - sc.Gas)
-	for _, n := range sc.Notifications {
-		log.Infof(" %v : %v", n.ContractAddress, n.States)
-	}
+	//for _, n := range sc.Notifications {
+	//	log.Infof(" '%v' : '%v'", n.ContractAddress, n.States)
+	//}
 	cv, err := common.ConvertNeoVmTypeHexString(result)
 	if err != nil {
-		return "", fmt.Errorf("preexec invoke failed to convert result")
+		return "", 0, fmt.Errorf("preexec invoke failed to convert result")
 	}
-	return cv.(string), nil
+	return cv.(string), math.MaxUint64-sc.Gas, nil
 }
