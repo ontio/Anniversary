@@ -56,7 +56,7 @@ const (
 )
 
 var (
-	//Ontology setting
+	//nvm-tool setting
 	NvmByteCodeFlag = cli.StringFlag{
 		Name:  "bytecode,b",
 		Usage: "smart contract bytecode.",
