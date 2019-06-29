@@ -142,4 +142,9 @@ def match(pattern, text):
 1. 此轮竞赛中所有开发者可以继续报名并提交自己的方案，包含上轮获奖者。
 2. 在此轮期间的最优结果如能优于上一轮解密轮结果，提交者将获得总奖池100%的奖励。上一轮获奖者60%奖励将不予发放。
 
-如有问题，请加入[Ontology Discord](https://discord.gg/4TQujHj)。
+## 请注意
+
+* 可以从[这里](https://dev-docs.ont.io/#/docs-en/smartcontract/01-started)获取更多本体智能合约开发和测试的相关文档。
+* 请使用Ontology TestNet进行测试，可以从[这里](https://developer.ont.io/applyOng)获取测试网的测试币。
+* 智能合约开发利器[SmartX](https://smartx.ont.io/)，可以在[这里](https://dev-docs.ont.io/#/docs-en/SmartX/00-overview)找到相关教程。
+* 如有问题，请加入[Ontology Discord](https://discord.gg/4TQujHj)。
