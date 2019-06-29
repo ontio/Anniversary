@@ -104,9 +104,7 @@ def match(regex, target):
 4. 如一人提交多次参赛代码，将以最后一次提交内容为准
 
 #### 公布获奖
-此轮获奖者将在新加坡时间7月5日内宣布，具体时间请关注Ontology官方
-[Facebook](https://www.facebook.com/ONTnetwork/)和
-[Twitter](https://twitter.com/OntologyNetwork)。
+此轮获奖者将在新加坡时间7月5日内宣布，具体时间请关注Ontology官方[Facebook](https://www.facebook.com/ONTnetwork/)和[Twitter](https://twitter.com/OntologyNetwork)。
 
 
 #### 获奖者能获得什么？
