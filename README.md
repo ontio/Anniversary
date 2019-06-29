@@ -25,7 +25,7 @@ c    matches any literal character c
 ^    matches the beginning of the input string
 $    matches the end of the input string
 ```
-
+ASCII
 For example, pattern <code>x.y</code> can match <code>xay</code> and <code>x2y</code>, but not <code>xy</code> or <code>xaby</code>. <code>^.$</code> can match any single-character string, while <code>^.*$</code> can match any string.
 
 Smart contract template:
@@ -102,7 +102,7 @@ After completing the above steps, developers need to submit their contract sourc
 1. Code submission time: 10:00 June 30th - 10:00 July 4th (UTC)
 2. Participants who used the fewest instructions to pass all the tests will be the winner (for more details please refer to the challenge rules)
 3. If there is more than one optimal solution, then participants who submitted first will be the winner. The submission time is determined by the time they called the registry contract
-4. If developers submit their codes more than once, we will judge the result based on the codes in the final submission.
+4. If developers submit their codes more than once, we will judge the result based on the codes in the final submission
 
 #### Winner Announcement
 The winner list will be announced on July 5th (UTC). 
