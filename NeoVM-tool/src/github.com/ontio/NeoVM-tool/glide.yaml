@@ -1,0 +1,37 @@
+package: github.com/ontio/NeoVM-tool
+import:
+- package: github.com/ontio/ontology-crypto
+  version: v1.0.4
+- package: github.com/itchyny/base58-go
+- package: github.com/pborman/uuid
+  version: v1.1
+- package: github.com/urfave/cli
+  version: v1.20.0
+- package: golang.org/x/text
+  repo: https://github.com/golang/text.git
+- package: golang.org/x/crypto
+  repo: https://github.com/golang/crypto.git
+  version: 57b3e21c3d5606066a87e63cfe07ec6b9f0db000
+- package: github.com/hashicorp/golang-lru
+- package: github.com/gosuri/uiprogress
+- package: github.com/gosuri/uilive
+  version: v0.0.1
+- package: golang.org/x/sys
+  repo: https://github.com/golang/sys.git
+  subpackages:
+  - unix
+- package: github.com/ontio/ontology
+  version: ^1.7.0-beta
+  subpackages:
+  - account
+  - common
+  - common/constants
+  - core/payload
+  - core/signature
+  - core/types
+  - http/base/common
+  - smartcontract/service/native/ont
+  - smartcontract/service/native/utils
+  - smartcontract/states
+ignore:
+  - golang.org/x/sys/unix
