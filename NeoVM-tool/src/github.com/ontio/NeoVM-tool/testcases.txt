@@ -7,5 +7,5 @@ a?c,        c,          01
 a*c,        abbbbc,     01
 a+c,        ac,         01
 ^a,         abc,        01
-^*c,        abbbbc,     01
+^.*c,       abbbbc,     01
 ^$,         ,           01
