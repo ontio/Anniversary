@@ -14,6 +14,6 @@ def Main(operation, args):
 
 def match(pattern, text):
     result = True      # Your Implementation Here
-    Notify(["match", pattern, text, result])
+    # Notify(["match", pattern, text, result])
     return result
 

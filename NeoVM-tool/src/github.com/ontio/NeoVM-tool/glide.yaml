@@ -21,7 +21,7 @@ import:
   subpackages:
   - unix
 - package: github.com/ontio/ontology
-  version: ^1.5.2
+  version: ^1.7.0
   subpackages:
   - account
   - common

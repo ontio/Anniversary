@@ -1,5 +1,7 @@
 ## NVM Test Tool
 
+NVM-tool can help you testing how much NeoVM instructions your smart contract use to complete all your tests.
+
 #### Requirements
 
 The requirements to build NVM-tool are:
@@ -18,8 +20,8 @@ $ git clone https://github.com/ontio/Anniversary.git
 2. Fetch the dependent third party packages with Glide:
 
 ```
-$ export GOPATH=`pwd`/NeoVM-tool
-$ cd NeoVM-tool/src/github.com/ontio/NeoVM-tool
+$ export GOPATH=`pwd`/Anniversary/NeoVM-tool
+$ cd Anniversary/NeoVM-tool/src/github.com/ontio/NeoVM-tool
 $ glide install
 ```
 
