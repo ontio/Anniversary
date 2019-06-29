@@ -33,10 +33,21 @@ $    matches the end of the input string
 스마트 컨트랙트 템플레이트:
 
 ```
-def Main(regex, args):
-    return match(regex, args[0])
-def match(regex, target):
-    // Your Implementation Here
+from ontology.interop.System.Runtime import Notify
+
+def Main(operation, args):
+
+    if operation == "match":
+        pattern = args[0]
+        text = args[1]
+        return match(pattern, text)
+
+    return False
+
+def match(pattern, text):
+    result = True      # Your Implementation Here
+    Notify(["match", pattern, text, result])
+    return result
 ```
 
 Test Case 예시:
