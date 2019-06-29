@@ -24,7 +24,7 @@ c    matches any literal character c
 $    matches the end of the input string
 ```
 
-For example, pattern <code>x.y</code> can match <code>xay</code> and <code>x2y</code>, but not <code>xy</code> or <code>xaby</code>. <code>^.$</code> can match any single-character string, while <code>^*$</code> can match any string.
+For example, pattern <code>x.y</code> can match <code>xay</code> and <code>x2y</code>, but not <code>xy</code> or <code>xaby</code>. <code>^.$</code> can match any single-character string, while <code>^.*$</code> can match any string.
 
 Smart contract template:
 
@@ -52,7 +52,7 @@ Test case examples:
 
 ### Judging Criteria:
 
-1. Participants need to pass all the 200 test cases we have prepared. All characters are ASCII characters and the longest string has 1024 characters.
+1. Participants need to pass all the 200 test cases we have prepared. All characters are ASCII characters, the longest pattern has 16 characters and the longest string has 40 characters.
 2. Participants who used the fewest Ontology NeoVM instructions to complete all the tests will be the winner.
 
 
