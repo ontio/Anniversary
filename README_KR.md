@@ -93,8 +93,8 @@ GitHub인증된 ONT ID받는 방법
 
 [Registration Form](http://bit.ly/2Jf02AE) 에 아래와 같은 정보를 제출하세요.
 
-1. Github에서 인정받은ONT ID
-2. Github아이디
+1. GitHub에서 인정받은ONT ID
+2. GitHub아이디
 3. 이메일 주소
 
 #### 개발자 리워드 참가 방법:
