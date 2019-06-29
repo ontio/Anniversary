@@ -1,3 +1,5 @@
+English | [中文](README_CN.md)  | [한국어](README_KR.md)
+
 # The First Anniversary of Ontology MainNet Launch: Ontology Klein Bottle Contest
 
 The Klein bottle was first described in 1882 by the German mathematician Felix Klein. It is an example of a non-orientable surface with no clear boundary. If likened to a bottle, it will be a bottle which you can never fill up. It is a two-dimensional manifold against which a system for determining a normal vector cannot be consistently defined. Its surface will never end.
@@ -74,7 +76,7 @@ Get GitHub-verified ONT ID
 
 1. Download [ONTO](https://onto.app/) or install from appstore
 2. Click “ONT ID” and sign up
-3. Complete GitHub ID verification.
+3. Complete GitHub ID verification
 
 Submit the following information via [Registration Form](http://bit.ly/2Jf02AE):
 
