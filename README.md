@@ -46,7 +46,7 @@ Test case examples:
 "a*c" ~ "abbbbc"
 "a+c" ~ "ac"
 "^a" ~ "abc"
-"^*c" ~ "abbbbc"
+"^.*c" ~ "abbbbc"
 "^$" ~ ""
 ```
 
