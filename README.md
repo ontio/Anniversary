@@ -143,4 +143,8 @@ The list of developers who ranked in the top 3 in the previous round will be ann
 1. All developers can continue to sign up and submit their solutions, including the first-round winners.
 2. If the optimal results in this round are better than the last round, then the developers will win the entire reward pool, instead of the 60% rewards in the last round.
 
-If you have any questions, please ask us on [Ontology Discord](https://discord.gg/4TQujHj).
+## Please note
+* You can find more documentation of Ontology smart contract development and test [here] (https://dev-docs.ont.io/#/docs-en/smartcontract/01-started)
+* Please test your smart contracts using the Ontology TestNet, you can apply for test tokens [here] (https://developer.ont.io/applyOng).
+* You can find the tutorial for smart contract development tool [SmartX] (https://smartx.ont.io/) [here] (https://dev-docs.ont.io/#/docs-en/SmartX/00-overview).
+* If you have any questions, please ask us on [Ontology Discord](https://discord.gg/4TQujHj).
