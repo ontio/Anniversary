@@ -25,7 +25,13 @@ $ cd Anniversary/NeoVM-tool/src/github.com/ontio/NeoVM-tool
 $ glide install
 ```
 
-3. Build the source code with make:
+3. Patch NeoVM configurations
+
+```
+$ patch -p1 -d vendor/github.com/ontio/ontology < anniversary.diff
+```
+
+4. Build the source code with make:
 
 ```
 $ make
