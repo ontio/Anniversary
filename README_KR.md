@@ -58,7 +58,7 @@ Test Case 예시:
 "a[123]c" ~ "a1c"
 "a[^abc]c ~ "a1c"
 "a?c" ~ "c"
-"a*c" ~ "abbbbc"
+"ab*c" ~ "abbbbc"
 "a+c" ~ "ac"
 "^a" ~ "abc"
 "^.*c" ~ "abbbbc"

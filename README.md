@@ -21,7 +21,7 @@ c    matches any literal character c
 [^]  matches any one character not listed between the brackets
 ?    matches any character one time if it exists
 *    matches zero or more occurrences of the previous character
-+    matches declared element one or more times
++    matches one or more occurrences of the previous character
 ^    matches the beginning of the input string
 $    matches the end of the input string
 ```
@@ -56,7 +56,7 @@ Test case examples:
 "a[123]c" ~ "a1c"
 "a[^abc]c ~ "a1c"
 "a?c" ~ "c"
-"a*c" ~ "abbbbc"
+"ab*c" ~ "abbbbc"
 "a+c" ~ "ac"
 "^a" ~ "abc"
 "^.*c" ~ "abbbbc"
