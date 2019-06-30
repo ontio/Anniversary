@@ -4,7 +4,7 @@ a.c,        abc,        01
 a[123]c,    a1c,        01
 a[^abc]c,   a1c,        01
 a?c,        c,          01
-a*c,        abbbbc,     01
+ab*c,       abbbbc,     01
 a+c,        ac,         01
 ^a,         abc,        01
 ^.*c,       abbbbc,     01
