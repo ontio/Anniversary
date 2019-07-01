@@ -28,6 +28,10 @@ $    matches the end of the input string
 
 比如模式 <code>x.y</code> 能匹配 <code>xay</code> 和 <code>x2y</code>等，但不能匹配 <code>xy</code> 或 <code>xaby</code>。<code>^.$</code>能够与任何单个字符的字符串匹配， 而 <code>^.*$</code>能够与任意字符串匹配。
 
+#### 关于特殊字符
+此简单规则的正则表达式需要支持在［］中的特殊字符。比如<code> [\\]] </code>将可以匹配 <code> abc\] </code>。
+在此次比赛中，只需对\\后的字符做字面匹配，而不需要支持非字面意思的匹配，比如 \b 不需要作为词边界。
+
 智能合约模版：
 
 ```
