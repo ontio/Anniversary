@@ -10,9 +10,9 @@ This document demonstrates how to invoke any deployed smart contract via **smart
 
 ### 1. Create ontology wallet by Cyano
 
-Please make sure you have install **cyano wallet ** in chrome web store
+Please make sure you have install **cyano wallet** in chrome web store
 
-After install cyano,  create a new account
+After install cyano,  create ontology account
 
 
 
@@ -26,7 +26,7 @@ After install cyano,  create a new account
 
 ### 3. WIF transform to private key
 
-In python project, click **"Tool"**button, transfer **WIF** to **private key**
+In python project, click **"Tool"** button, transfer **WIF** to **private key**
 
 ![](./images/WIF2PA.png)
 
@@ -61,7 +61,7 @@ def bindContract(account, ontid, hash):
 
 ### 5. Invoke smart contract 
 
-In python project, click **"Test"**button, invoke smart contract.
+In python project, click **"Test"** button, invoke smart contract.
 
 
 
