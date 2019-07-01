@@ -16,7 +16,7 @@ After install cyano,  create a new account
 
 
 
-![cyano](./images/cyano.png)
+![cyano](./images/Cyano.png)
 
 
 
@@ -79,7 +79,7 @@ in current example, select MainNet
 
 please select **Other** selection
 
-####5.4 add invoke function
+#### 5.4 add invoke function
 
 Add the function that needs to be invoked
 
