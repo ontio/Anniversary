@@ -31,7 +31,7 @@ For example, pattern <code>x.y</code> can match <code>xay</code> and <code>x2y</
 #### About Special Characters
 
 The regular expression should support special characters in <code>[]</code>. 
-For example, pattern <code> [\\] </code> can match <code> abc\] </code>.
+For example, pattern <code> [\\]] </code> can match <code> abc\] </code>.
 
 In this contest, you just need to interpret the charater after <code>\\</code> literally.
 For example, you don't need to interpret <code>\b</code> as word boundary.
